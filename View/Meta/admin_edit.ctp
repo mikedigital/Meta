@@ -1,11 +1,11 @@
-<?php 
-$action = in_array($this->action, array('add', 'admin_add'))?'Add':'Edit'; 
+<?php
+$action = in_array($this->action, array('add', 'admin_add'))?'Add':'Edit';
 $action = Inflector::humanize($action);
 ?>
 
 <div class="left" style="width:550px;">
 <?php
-echo $this->Form->create();?>
+echo $this->Form->create('Metum');?>
 <fieldset><legend><?php echo $action . ' ' . $modelClass;?></legend>
 <?php
 echo $this->Form->input('id');
@@ -63,12 +63,12 @@ jQuery(document).ready(function($){
 	$("#MetumTitle").keyup(function(){
 		titleCount.text(' ' + $(this).val().length + ' characters (70 recommended)');
 	}).keyup();
-	
+
 	var descriptionCount = $("#MetumDescription").prev("label").append('<span class="character_count"></span>').find(".character_count");
 	$("#MetumDescription").keyup(function(){
 		descriptionCount.text(' ' + $(this).val().length + ' characters (156 recommended)');
 	}).keyup();
-	
+
 	var keywordCount = $("#MetumKeywords").prev("label").append('<span class="character_count"></span>').find(".character_count");
 	$("#MetumKeywords").keyup(function(){
 		keywordCount.text(' ' + $(this).val().length + ' characters');
